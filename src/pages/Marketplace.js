@@ -27,7 +27,7 @@ function Marketplace () {
       <iframe 
         id="wallet-target" 
         title="Eluvio Wallet" 
-        style={{ width: "100%", height: "100vh", border: "solid", borderColor: "white", borderWidth: "10px", borderRadius: "20px" }}>
+        style={{ width: "100%", height: "100vh" }}>
       </iframe>
       </section>
     </main>
