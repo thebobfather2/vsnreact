@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "./Home.css";
+import "./Marketplace.css";
 import { ElvWalletFrameClient } from "@eluvio/elv-wallet-frame-client";
     
 function Marketplace () {
