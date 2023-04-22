@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Marketplace from './pages/Marketplace';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {

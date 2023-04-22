@@ -22,7 +22,7 @@ function Marketplace () {
   }, []);
 
   return (
-    <main className="MainContainer" style={{padding: '10px'}}>
+    <main className="MainContainer">
       <section className={`p-3`}>
       <iframe 
         id="wallet-target" 
