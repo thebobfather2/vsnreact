@@ -1,0 +1,21 @@
+.Navbar {
+    font-size: 1.5vw;
+    margin-left: 30px;
+}
+
+.Links {
+    padding: 20px; 
+}
+
+/* mobile styles */
+@media only screen and (max-width: 800px) {
+
+    .Navbar {
+        font-size: 3.5vw;
+        margin-left: 19px;
+    }
+
+    .Links {
+        padding: 8px; 
+    }
+}
