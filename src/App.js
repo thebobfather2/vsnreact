@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Marketplace from './pages/Marketplace';
 import VSIR from './pages/VSIR';
 import Login from "./Login";
+import Register from './Register';
 import './App.css';
 
 function App() {
@@ -12,7 +13,6 @@ function App() {
     <div className="App">
         <Router>
           <Header />
-          <Login />
           <Routes>
             <Route
               path='/'
@@ -25,6 +25,14 @@ function App() {
             <Route
               path='/VSIR'
               element={<VSIR />}
+            />
+            <Route
+              path='/Login'
+              element={<Login />}
+            />
+            <Route
+              path='/Register'
+              element={<Register />}
             />
           </Routes>
         </Router>
