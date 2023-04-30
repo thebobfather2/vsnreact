@@ -3,6 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './pages/Home';
 import Marketplace from './pages/Marketplace';
+import VSIR from './pages/VSIR';
+import Login from "./Login";
+import Register from './Register';
 import './App.css';
 
 function App() {
@@ -18,6 +21,18 @@ function App() {
             <Route
               path='/Marketplace'
               element={<Marketplace />}
+            />
+            <Route
+              path='/VSIR'
+              element={<VSIR />}
+            />
+            <Route
+              path='/Login'
+              element={<Login />}
+            />
+            <Route
+              path='/Register'
+              element={<Register />}
             />
           </Routes>
         </Router>
