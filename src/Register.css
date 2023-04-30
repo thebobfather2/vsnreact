@@ -11,6 +11,11 @@
 
 }
 
+.already {
+    background-color: rgb(221, 205, 205);
+    padding: 40px;
+}
+
 .Note {
     display: flex;
     justify-content: center;

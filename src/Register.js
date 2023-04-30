@@ -167,6 +167,11 @@ const Register = () => {
                             <br />
                         </p>
                     </form>
+                    <button className="signup" disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
+                    <br />
+                    <br />
+                    <br />
+                    <div className="already">
                     <p className='New'>
                         Already registered?</p><br />
                         <span className="line">
@@ -177,6 +182,7 @@ const Register = () => {
                         </Link> 
                             </div>
                         </span>
+                        </div>
                 </section>
            ) }
         </>
