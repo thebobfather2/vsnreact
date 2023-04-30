@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect, useContext } from 'react';
 import AuthContext from "./context/AuthProvider";
+import './Login.css';
 
 import axios from './api/axios';
 const LOGIN_URL = '/auth';
@@ -68,10 +69,12 @@ const Login = () => {
         <section>
             <p ref={errRef} className={errMsg ? "errmsg" : 
             "offscreen"} aria-live="assertive">{errMsg}</p>
-            <h1>Sign In</h1>
-             <form onSubmit={handleSubmit}>
+
+            <h1 className='Heading'>Sign In</h1>
+
+             <form className='Field' onSubmit={handleSubmit}>
                 <label htmlFor="username">Username:</label>
-                    <input
+                    <input className='Input'
                     type="text"
                     id="username"
                     ref={userRef}
@@ -82,21 +85,24 @@ const Login = () => {
                     />
 
                 <label htmlFor="password">Password:</label>
-                    <input
+                    <input className='Input'
                     type="password"
                     id="password"
                     onChange={(e) => setPwd(e.target.value)}
                     value={pwd}
                     required
                     />
-                <button>Sign In</button>
+                <button className='btn'>Sign In</button>
             </form>
             
             <p>
-                Need an Account?<br />
+                <p className='New'>
+                Need an Account?</p><br />
                 <span className="line">
                     {/*put router link here*/}
-                    <a href="/Register">Sign Up</a>
+                    <div style={{marginBottom: "80px"}}>
+                    <button className='signup' href="/Register">Sign Up</button>
+                    </div>
                 </span>
             </p>
 
