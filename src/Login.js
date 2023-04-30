@@ -100,7 +100,7 @@ const Login = () => {
                 <button className='btn'>Sign In</button>
             </form>
             
-            <p>
+            <div>
                 <p className='New'>
                 Need an Account?</p><br />
 
@@ -112,7 +112,7 @@ const Login = () => {
                         </Link> 
                     </div>
                 </span>
-            </p>
+            </div>
 
     </section>
         )}
