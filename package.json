@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@eluvio/elv-client-js": "^4.0.28",
     "@eluvio/elv-wallet-frame-client": "^2.0.6",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "hls.js": "^1.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",
@@ -36,5 +38,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "babel-loader": "^9.1.2",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.1",
+    "webpack-cli": "^5.0.2"
   }
 }

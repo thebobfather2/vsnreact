@@ -21,6 +21,13 @@ function AuthNavbar({ currentPage, handlePageChange }) {
                 >
                     Marketplace
                 </Link>
+
+                <Link style={{ color: "#ffffff", padding: "20px", fontSize: "2.5vh" }}
+                to="/VSIR"
+                // Check to see if the currentPage is `Homework`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
+                >
+                    VSIR
+                </Link>
                 
         </nav>
         </div>
