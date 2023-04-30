@@ -1,5 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import axios from './api/axios';
+import './Register.css';
+import { Link } from 'react-router-dom';
 
 const USER_REGEX = /^[A-z][A-z0-9-_]{3,23}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
@@ -90,12 +92,12 @@ const Register = () => {
             ) : (
                 <section>
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-                    <h1>Register</h1>
-                    <form onSubmit={handleSubmit}>
+                    <h1 className="Heading">Register</h1>
+                    <form className="Field" onSubmit={handleSubmit}>
                         <label htmlFor="username">
                             Username:
-                            </label>l
-                        <input
+                            </label>
+                        <input className="Input"
                             type="text"
                             id="username"
                             ref={userRef}
@@ -108,19 +110,22 @@ const Register = () => {
                             onFocus={() => setUserFocus(true)}
                             onBlur={() => setUserFocus(false)}
                         />
+                        <div className="Note">
                         <p id="uidnote" className={userFocus && user && !validName ? "instructions" : "offscreen"}>
                          
-                            4 to 24 characters.<br />
-                            Must begin with a letter.<br />
-                            Letters, numbers, underscores, hyphens allowed.
+                            4 to 24 characters.
+                            Must begin with a letter
+                            Letters, numbers, underscores, hyphens allowed.<br />
+                            <br />
+                            
                         </p>
-
+                        </div>
 
                         <label htmlFor="password">
                             Password:
                        
                         </label>
-                        <input
+                        <input className="Input"
                             type="password"
                             id="password"
                             onChange={(e) => setPwd(e.target.value)}
@@ -133,9 +138,11 @@ const Register = () => {
                         />
                         <p id="pwdnote" className={pwdFocus && !validPwd ? "instructions" : "offscreen"}>
                          
-                            8 to 24 characters.<br />
-                            Must include uppercase and lowercase letters, a number and a special character.<br />
+                            8 to 24 characters.
+                            Must include uppercase and lowercase letters, a number and a special character.
                             Allowed special characters: <span aria-label="exclamation mark">!</span> <span aria-label="at symbol">@</span> <span aria-label="hashtag">#</span> <span aria-label="dollar sign">$</span> <span aria-label="percent">%</span>
+                            <br />
+                            <br />
                         </p>
 
 
@@ -143,7 +150,7 @@ const Register = () => {
                             Confirm Password:
                           
                         </label>
-                        <input
+                        <input className="Input"
                             type="password"
                             id="confirm_pwd"
                             onChange={(e) => setMatchPwd(e.target.value)}
@@ -156,18 +163,20 @@ const Register = () => {
                         />
                         <p id="confirmnote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
                           
-                            Must match the first password input field.
+                            Must match the first password input field. <br />
+                            <br />
                         </p>
-
-                        <button disabled={!validName || !validPwd || !validMatch ? true : false}>Sign Up</button>
                     </form>
-                    <p>
-                        Already registered?<br />
+                    <p className='New'>
+                        Already registered?</p><br />
                         <span className="line">
                             {/*put router link here*/}
-                            <a href="/">Sign In</a>
+                            <div style={{marginBottom: "80px"}}>
+                        <Link to="/Login">
+                            <button className='signup'>Sign In</button>
+                        </Link> 
+                            </div>
                         </span>
-                    </p>
                 </section>
            ) }
         </>
