@@ -1,48 +1,68 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
-// import SignUpForm from './SignupForm';
 
-function AuthNavbar({ currentPage, handlePageChange }) {
-    console.log(currentPage);
-    return (
-        <div className='Navbar'>
-        <nav>
-                <Link className='Links' style={{ color: "#ffffff"}}
-                    to="/"
-                    // This is a conditional (ternary) operator that checks to see if the current page is "Home"
-                    // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
-                >
-                    Home
-                </Link>
+function AuthNavbar({ isAuthenticated, currentPage, handlePageChange }) {
+  const accessToken = localStorage.getItem('accessToken');
+  const navigate = useNavigate();
 
-                <Link className='Links' style={{ color: "#ffffff" }}
-                to="/Marketplace"
-                // Check to see if the currentPage is `Homework`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
-                >
-                    Marketplace
-                </Link>
+  const logout = () => {
+    localStorage.removeItem('accessToken');
+    navigate('/Login');
+  };
 
-                <Link className='Links'style={{ color: "#ffffff" }}
-                to="/VSIR"
-                // Check to see if the currentPage is `Homework`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
-                >
-                    VSIR
-                </Link>
-                <Link className='Links' style={{ color: "#ffffff" }}
-                to="/Login"
-                // Check to see if the currentPage is `Homework`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
-                >
-                    Log In
-                </Link>
+  return (
+    <div className='Navbar'>
+      <nav>
+        <Link
+          className='Links'
+          style={{ color: '#ffffff' }}
+          to='/'
+          // This is a conditional (ternary) operator that checks to see if the current page is "Home"
+          // If it is, we set the current page to 'nav-link-active', otherwise we set it to 'nav-link'
+        >
+          Home
+        </Link>
 
-                
-        </nav>
-        </div>
-        
-    )
+        <Link
+          className='Links'
+          style={{ color: '#ffffff' }}
+          to='/Marketplace'
+          // Check to see if the currentPage is `Homework`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
+        >
+          Marketplace
+        </Link>
+
+        <Link
+          className='Links'
+          style={{ color: '#ffffff' }}
+          to='/VSIR'
+          // Check to see if the currentPage is `Homework`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
+        >
+          VSIR
+        </Link>
+        {accessToken ? (
+          <>
+            <Link
+              className='Links'
+              style={{ color: '#ffffff' }}
+              to='/Profile'
+            >
+              Profile
+            </Link>
+            
+            <button onClick={logout}>
+              Logout
+            </button>
+          </>
+        ) : (
+          <Link className='Links' style={{ color: '#ffffff' }} to='/Login'>
+            Log In
+          </Link>
+        )}
+      </nav>
+    </div>
+  );
 }
-
-
 
 export default AuthNavbar;
