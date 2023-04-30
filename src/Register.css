@@ -76,8 +76,8 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-right: 0px;
-        margin-left: 0px;
+        margin-right: 40px;
+        margin-left: 40px;
         margin-top: 10px;
         margin-bottom: 10px;
         box-shadow: 1px 1px #000000;
@@ -85,7 +85,7 @@
 
     .btn {
         margin-top: 30px !important;
-        margin: 0px; 
+        margin: 40px; 
         padding: 10px;
         box-shadow: 1px 1px #000000;
     }
@@ -96,8 +96,8 @@
     }
 
     .signup {
-        margin-right: 0px; 
-        margin-left: 0px;
+        margin-right: 40px; 
+        margin-left: 40px;
         font-size: 5vw;
         padding: 10px;
         box-shadow: 1px 1px #000000;
