@@ -47,6 +47,8 @@
 }
 
 .signup {
+    margin-right: 400px; 
+    margin-left: 400px;
     font-size: 1.5vw;
     padding: 10px;
     box-shadow: 1px 1px #000000;
@@ -94,6 +96,8 @@
     }
 
     .signup {
+        margin-right: 10px; 
+        margin-left: 10px;
         font-size: 5vw;
         padding: 10px;
         box-shadow: 1px 1px #000000;
