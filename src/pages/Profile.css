@@ -4,7 +4,33 @@
     justify-content: space-around;
     gap: 10px;
 }
-
+.followers {
+    width: 112%;
+    font-size: 1.5vw;
+}
 .item {
     width: 30%;
 }
+
+@media (max-width: 768px) { /* adjust to your desired screen size */
+    .pfp {
+        padding: 50px;
+    }
+
+    .followers {
+        font-size:3.5vw;
+        width: 90%;
+    }
+
+    .gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        gap: 10px;
+        padding: 30px;
+    }
+    
+    .item {
+        width: 30%;
+    }
+  }

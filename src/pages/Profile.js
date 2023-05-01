@@ -4,7 +4,7 @@ import ProfileComponent from '../components/ProfileComponent';
 
 const Profile = () => {
   return (
-    <div style={{maxWidth:"550px", margin:"0px auto"}}>
+    <div style={{maxWidth:"600px", margin:"0px auto"}}>
         <div style={{
             display:"flex",
             justifyContent:"space-around",
@@ -18,7 +18,7 @@ const Profile = () => {
             </div>
             <div>
                 <h2>Bobby Rabbit</h2>
-                <div style={{display:"flex", justifyContent:"space-between", width:"112%"}} >
+                <div className='followers' style={{display:"flex", justifyContent:"space-between"}} >
                     <h5>69 posts</h5>
                     <h5>420 followers</h5>
                     <h5>22 following</h5>
