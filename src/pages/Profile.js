@@ -1,85 +1,40 @@
 import React, { useState } from 'react';
+import './Profile.css';
 import ProfileComponent from '../components/ProfileComponent';
 
-function Profile() {
-  const [user, setUser] = useState({
-    name: 'John Smith',
-    profilePicture: 'https://www.clker.com/cliparts/u/2/A/u/A/t/blank-profile-head-md.png',
-    bio: 'I like hiking and reading.'
-  });
-
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setUser((prevUser) => ({
-      ...prevUser,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    let response;
-    try {
-      const token = localStorage.getItem('token');
-      response = await fetch(`${process.env.REACT_APP_SERVER_URL}api/users/profile`, {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
-        },
-        body: JSON.stringify(user),
-      });
-      const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      console.error(error);
-      const text = await response.text();
-      console.log(text);
-    }
-  };
-
-
+const Profile = () => {
   return (
-    <div className="profile-page">
-      <form onSubmit={handleSubmit}>
-        <label>
-          Name:
-          <input
-            type="text"
-            name="name"
-            value={user.name}
-            onChange={handleInputChange}
-          />
-        </label>
-        <br />
-        <label>
-          Profile Picture:
-          <input
-            type="text"
-            name="profilePicture"
-            value={user.profilePicture}
-            onChange={handleInputChange}
-          />
-        </label>
-        <br />
-        <label>
-          Bio:
-          <textarea
-            name="bio"
-            value={user.bio}
-            onChange={handleInputChange}
-          />
-        </label>
-        <br />
-        <button type="submit">Save</button>
-      </form>
-      <ProfileComponent
-        username={user.name}
-        profilePicture={user.profilePicture}
-        bio={user.bio}
-      />
+    <div style={{maxWidth:"550px", margin:"0px auto"}}>
+        <div style={{
+            display:"flex",
+            justifyContent:"space-around",
+            margin:"18px 0px",
+            borderBottom:"1px solid grey",
+        }}>
+            <div>
+                <img style={{width:"150px", height:"160px", borderRadius:"80px"}} 
+                src="https://pbs.twimg.com/profile_images/1592963714331860996/qhg-IWoI_400x400.jpg"
+                />
+            </div>
+            <div>
+                <h2>Bobby Rabbit</h2>
+                <div style={{display:"flex", justifyContent:"space-between", width:"112%"}} >
+                    <h5>69 posts</h5>
+                    <h5>420 followers</h5>
+                    <h5>22 following</h5>
+                </div>
+            </div>
+        </div>
+        <div className='gallery'>
+                    <img className='item' src="https://pbs.twimg.com/profile_images/1592963714331860996/qhg-IWoI_400x400.jpg" />
+                    <img className='item' src="https://pbs.twimg.com/profile_images/1592963714331860996/qhg-IWoI_400x400.jpg" />
+                    <img className='item' src="https://pbs.twimg.com/profile_images/1592963714331860996/qhg-IWoI_400x400.jpg" />
+                    <img className='item' src="https://pbs.twimg.com/profile_images/1592963714331860996/qhg-IWoI_400x400.jpg" />
+                    <img className='item' src="https://pbs.twimg.com/profile_images/1592963714331860996/qhg-IWoI_400x400.jpg" />
+                    <img className='item' src="https://pbs.twimg.com/profile_images/1592963714331860996/qhg-IWoI_400x400.jpg" />
+                </div>
     </div>
-  );
+  )
 }
 
 export default Profile;
