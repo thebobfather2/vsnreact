@@ -9,7 +9,12 @@ function VSIR () {
 
   return (
     <div>
-
+      <iframe
+        title="VSIR"
+        src="https://vibestreamnetwork.io/vibestreambeats/vsirfull.html"
+        width="100%"
+        height="800"
+      />
     </div>
   );
 }
