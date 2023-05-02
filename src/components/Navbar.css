@@ -9,6 +9,10 @@
     display: block;
   }
   
+  .Navbar__toggle i {
+    font-size: 34px;
+  }
+
   .Links {
     padding: 20px; 
   }
