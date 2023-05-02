@@ -10,11 +10,8 @@
   }
 
   .Navbar__toggle {
-    /* your existing styles */
-    transition: all 0.3s ease;
-  }
-  .Navbar__toggle.open {
-    transform: rotate(90deg);
+    background-color: #000;
+    border: none;
   }
   
   .Navbar__toggle i {
