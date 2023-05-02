@@ -10,12 +10,15 @@
   }
 
   .Navbar__toggle {
-    background-color: #000;
-    border: none;
+    /* your existing styles */
+    transition: all 0.3s ease;
+  }
+  .Navbar__toggle.open {
+    transform: rotate(90deg);
   }
   
   .Navbar__toggle i {
-    font-size: 24px;
+    font-size: 34px;
     padding: 8px;
     color: #fff;
   }
