@@ -1,5 +1,5 @@
 const openai = require('openai');
-openai.apiKey = 'YOUR_API_KEY_HERE';
+
 
 async function generateResponse(prompt) {
   try {

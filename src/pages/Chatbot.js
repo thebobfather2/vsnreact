@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './Chatbot.css';
-require('dotenv').config();
 
 const API_KEY = process.env.OPENAI_API_KEY;
 
