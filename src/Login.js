@@ -77,27 +77,31 @@ const Login = () => {
 
             <h1 className='Heading'>Sign In</h1>
 
-             <form className='Field' onSubmit={handleSubmit}>
+            <form className='Field' onSubmit={handleSubmit}>
+
                 <label htmlFor="username">Username:</label>
-                    <input className='Input'
+
+                    <input className='Inputs'
                     type="text"
                     id="username"
                     ref={userRef}
-                    autoComplete="off"
+                    autoComplete="on"
                     onChange={(e) => setUser(e.target.value)}
                     value={user}
                     required
                     />
 
                 <label htmlFor="password">Password:</label>
-                    <input className='Input'
+                    <input className='Inputs'
                     type="password"
                     id="password"
                     onChange={(e) => setPwd(e.target.value)}
                     value={pwd}
                     required
                     />
+
                 <button className='btn'>Sign In</button>
+
             </form>
             
             <div>

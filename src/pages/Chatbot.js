@@ -43,7 +43,7 @@ function Chatbot() {
         <div className='Chatbot'>
             <h1>Chat with the VSN Bot!</h1>
             <div>
-                <input
+                <input className='chatInput'
                     type="text"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}

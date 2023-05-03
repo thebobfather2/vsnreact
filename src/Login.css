@@ -11,7 +11,7 @@
 
 }
 
-.Input {
+.Inputs {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,12 +60,12 @@
 
     }
 
-    .Input {
+    .Inputs {
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-right: 40px;
-        margin-left: 40px;
+        margin-right: 40px !important;
+        margin-left: 40px !important;
         margin-top: 10px;
         margin-bottom: 40px;
         box-shadow: 1px 1px #000000;
