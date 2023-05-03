@@ -15,29 +15,9 @@
 }
 
 .imgHome {
-    margin-top: 40px;
     width: 30%;
-    animation-name: bounce;
-    animation-duration: 1.5s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
-}
 
-@keyframes bounce {
-    0%, 100% {
-      transform: translateY(0);
-    }
-    50% {
-      transform: translateY(-40px);
-    }
-  }
-  
-  .myElement {
-    animation-name: fadeIn;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-  }
-  
+}
 
 /* mobile styles */
 @media only screen and (max-width: 600px) {
