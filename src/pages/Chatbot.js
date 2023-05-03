@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './Chatbot.css';
+require('dotenv').config();
 
-const API_KEY = "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";
+const API_KEY = process.env.OPENAI_API_KEY;
 
 function Chatbot() {
     const [message, setMessage] = useState("");

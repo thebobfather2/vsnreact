@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const API_KEY = "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";
+
 
 function Chatbot() {
     const [tweet, setTweet] = useState("");
