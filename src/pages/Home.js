@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Home.css";
+import vsnLogo from "../img/vsn.png";
 
     
 function Home () {
@@ -7,7 +8,7 @@ function Home () {
   return (
     <main className="MainContainer">
       <section className={`p-3`}>
-        <h1 style={{padding: "50px", color: "#ffffff"}}>Welcome to VSN!</h1>
+        <img className='imgHome' src={vsnLogo} />
       </section>
     </main>
   )
