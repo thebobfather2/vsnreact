@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Chatbot.css';
 
-const API_KEY = "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";
+const API_KEY = "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";
 
 function Chatbot() {
     const [message, setMessage] = useState("");
