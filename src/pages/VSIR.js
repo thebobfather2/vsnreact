@@ -6,7 +6,7 @@ function VSIR() {
     <div>
       <iframe
         title="VSIR"
-        src="https://vibestreamnetwork.io/vibestreambeats/vsir.html"
+        src="https://vibestreamnetwork.io/vibestreambeats/vsirfull.html"
         style={{
           width: "100vw",
           height: "100vh",
