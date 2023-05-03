@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import './Chatbot.css';
 
-import { Configuration, OpenAIApi } from 'openai';
-
-const API_KEY = "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";
+const API_KEY = "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";
 
 function Chatbot() {
     const [message, setMessage] = useState("");
@@ -23,18 +21,22 @@ function Chatbot() {
             "stop": ["\n"]
         };
         
-        const response = await fetch("https://api.openai.com/v1/completions", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": "Bearer " + API_KEY,
-            },
-            body: JSON.stringify(APIBody)
-        });
-        
-        const data = await response.json();
-        console.log(data.choices[0].text);
-        setResponse(data.choices[0].text.trim());
+        try {
+            const response = await fetch("https://api.openai.com/v1/completions", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + API_KEY,
+                },
+                body: JSON.stringify(APIBody)
+            });
+            
+            const data = await response.json();
+            console.log(data.choices[0].text);
+            setResponse(data.choices[0].text.trim());
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     return (
