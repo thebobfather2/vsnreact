@@ -39,6 +39,9 @@ function AuthNavbar({ isAuthenticated, currentPage, handlePageChange }) {
            <Link className='MobileLinks' to='/VSIR' onClick={closeMenu}>
              VSIR
            </Link>
+           <Link className='MobileLinks' to='/Chatbot' onClick={closeMenu}>
+             Chatbot
+           </Link>
            {accessToken ? (
              <>
                <Link className='MobileLinks' to='/Profile' onClick={closeMenu}>
@@ -84,6 +87,16 @@ function AuthNavbar({ isAuthenticated, currentPage, handlePageChange }) {
           >
             VSIR
           </Link>
+
+          <Link
+            className='Links'
+            style={{ color: '#ffffff' }}
+            to='/Chatbot'
+            // Check to see if the currentPage is `Homework`, and if so we use the active link class from bootstrap. Otherwise, we set it to a normal nav-link
+          >
+            Chatbot
+          </Link>
+
           {accessToken ? (
             <>
               <Link
