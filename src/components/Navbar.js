@@ -106,8 +106,8 @@ function AuthNavbar({ isAuthenticated, currentPage, handlePageChange }) {
               >
                 Profile
               </Link>
-
-              <button onClick={logout}>Logout</button>
+              
+              <button style={{backgroundColor: "black", fontSize: "1.5vw"}} className='Links' onClick={logout}>Logout</button>
             </>
           ) : (
             <Link className='Links' style={{ color: '#ffffff' }} to='/Login'>
