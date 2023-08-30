@@ -5,6 +5,13 @@
     margin-left: 30px;
   }
 
+  .logOutBtn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: white;
+  }
+
   .Navbar__desktop {
     display: block;
   }

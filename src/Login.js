@@ -34,30 +34,30 @@ const Login = () => {
                     withCredentials: true
                 }
             );
-        console.log(JSON.stringify(response?.data));
-        //console.log(JSON.stringify(response));
-        
-        const accessToken = response?.data?.accessToken;
-        // After a user logs in and the server responds with an access token
-        localStorage.setItem('accessToken', response.accessToken);
+            console.log(JSON.stringify(response?.data));
+            const accessToken = response?.data?.accessToken;
+            console.log('Access Token:', accessToken);
 
-        const roles = response?.data?.roles;
-        setAuth({ user, pwd, roles, accessToken });
-        setUser('');
-        setPwd('');
-        setSuccess(true);
-    } catch (err) {
-        if (!err?.response) {
-            setErrMsg('No Server Response');
-        } else if (err.response?.status === 400) {
-            setErrMsg('Missing Username or Password');
-        } else if (err.response?.status === 401) {
-            setErrMsg('Unauthorized');
-        } else {
-            setErrMsg('Login Failed');
+            // After a user logs in and the server responds with an access token
+            localStorage.setItem('accessToken', accessToken);
+
+            const roles = response?.data?.roles;
+            setAuth({ user, pwd, roles, accessToken });
+            setUser('');
+            setPwd('');
+            setSuccess(true);
+        } catch (err) {
+            if (!err?.response) {
+                setErrMsg('No Server Response');
+            } else if (err.response?.status === 400) {
+                setErrMsg('Missing Username or Password');
+            } else if (err.response?.status === 401) {
+                setErrMsg('Unauthorized');
+            } else {
+                setErrMsg('Login Failed');
+            }
+            errRef.current.focus();
         }
-        errRef.current.focus();
-    }
     }
     
     return (

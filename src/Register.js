@@ -11,7 +11,14 @@ const Register = () => {
     const userRef = useRef();
     const errRef = useRef();
 
+    const [dataArray, setDataArray] = useState([]);
+
     const [user, setUser] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+
+    const [email, setEmail] = useState('');
+
     const [validName, setValidName] = useState(false);
     const [userFocus, setUserFocus] = useState(false);
 
@@ -42,51 +49,55 @@ const Register = () => {
     useEffect(() => {
         setErrMsg('');
     }, [user, pwd, matchPwd])
-
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // if button enabled with JS hack
         const v1 = USER_REGEX.test(user);
         const v2 = PWD_REGEX.test(pwd);
         if (!v1 || !v2) {
-            setErrMsg("Invalid Entry");
-            return;
+          setErrMsg("Invalid Entry");
+          return;
         }
         try {
-            const response = await axios.post(REGISTER_URL,
-                JSON.stringify({ user, pwd }),
-                {
-                    headers: { 'Content-Type': 'application/json' },
-                    withCredentials: true
-                }
-            );
-            // TODO: remove console.logs before deployment
-            console.log(JSON.stringify(response?.data));
-            //console.log(JSON.stringify(response))
-            setSuccess(true);
-            //clear state and controlled inputs
-            setUser('');
-            setPwd('');
-            setMatchPwd('');
-        } catch (err) {
-            if (!err?.response) {
-                setErrMsg('No Server Response');
-            } else if (err.response?.status === 409) {
-                setErrMsg('Username Taken');
-            } else {
-                setErrMsg('Registration Failed')
+          const response = await axios.post(
+            REGISTER_URL,
+            JSON.stringify({ user, pwd }),
+            {
+              headers: { "Content-Type": "application/json" },
+              withCredentials: true,
             }
-            errRef.current.focus();
+          );
+          setSuccess(true);
+          setDataArray((prevDataArray) => [
+            ...prevDataArray,
+            {
+              user: user,
+              pwd: pwd,
+              firstName: firstName,
+              lastName: lastName,
+              email: email
+            },
+          ]);
+          setPwd("");
+          setMatchPwd("");
+        } catch (err) {
+          if (!err?.response) {
+            setErrMsg("No Server Response");
+          } else if (err.response?.status === 409) {
+            setErrMsg("Username Taken");
+          } else {
+            setErrMsg("Registration Failed");
+          }
+          errRef.current.focus();
         }
-    }
-
+      };
+      
     return (
         <>
             {success ? (
                 <section>
                     <h1>Success!</h1>
                     <p>
-                        <a href="#">Sign In</a>
+                    <Link to="/Login">Sign In</Link>
                     </p>
                 </section>
             ) : (
@@ -94,6 +105,31 @@ const Register = () => {
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                     <h1 className="Heading">Register</h1>
                     <form className="Field" onSubmit={handleSubmit}>
+
+                        <label htmlFor="firstName">
+                            First Name:
+                        </label>
+                        <input
+                            className="Input"
+                            type="text"
+                            id="firstName"
+                            onChange={(e) => setFirstName(e.target.value)}
+                            value={firstName}
+                            required
+                        />
+
+                        <label htmlFor="firstName">
+                            Last Name:
+                        </label>
+                        <input
+                            className="Input"
+                            type="text"
+                            id="lastName"
+                            onChange={(e) => setLastName(e.target.value)}
+                            value={lastName}
+                            required
+                        />
+
                         <label htmlFor="username">
                             Username:
                             </label>
@@ -120,6 +156,19 @@ const Register = () => {
                             
                         </p>
                         </div>
+
+                        <label htmlFor="email">
+                            Email:
+                            </label>
+                            <input
+                            className="Input"
+                            type="email"
+                            id="email"
+                            onChange={(e) => setEmail(e.target.value)}
+                            value={email}
+                            required
+                            />
+
 
                         <label htmlFor="password">
                             Password:
