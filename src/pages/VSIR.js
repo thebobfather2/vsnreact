@@ -10,7 +10,6 @@ function VSIR() {
         style={{
           width: "100vw",
           border: "none",
-          overflow: "hidden"
         }}
       />
     </div>
