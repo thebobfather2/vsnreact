@@ -9,6 +9,7 @@ function VSIR() {
         src="https://vibestreamnetwork.io/vibestreambeats/vsirfull.html"
         style={{
           width: "100vw",
+          minHeight: "120vh",
           border: "none",
         }}
       />

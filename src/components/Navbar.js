@@ -119,13 +119,13 @@ function AuthNavbar({ isAuthenticated, currentPage, handlePageChange }) {
 
           {accessToken ? (
             <>
-              <Link
+              {/* <Link
                 className='Links'
                 style={{ color: '#ffffff' }}
                 to={`/profile/${userId}`}
               >
                 My Profile
-              </Link>
+              </Link> */}
 
               <Link
                 className='Links'
