@@ -23,11 +23,11 @@ function Marketplace () {
 
   return (
     <main className="MainContainer" style={{minHeight: "100vh"}}>
-      <section style={{minHeight: "100vh"}}>
+      <section style={{minHeight: "100vh", width: "100%"}}>
       <iframe 
         id="wallet-target" 
         title="Eluvio Wallet" 
-        style={{ width: "100%", minHeight: "100vh" }}>
+        style={{ width: "100vw", minHeight: "100vh" }}>
       </iframe>
       </section>
     </main>
