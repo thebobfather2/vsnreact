@@ -4,8 +4,10 @@ import Header from './components/Header';
 import Home from './pages/Home';
 import Marketplace from './pages/Marketplace';
 import Profile from './pages/Profile';
+import UserProfile from "./components/UserProfile2";
 import VSIR from './pages/VSIR';
 import Chatbot from './pages/Chatbot';
+import Settings from './pages/Settings';
 import Login from "./Login";
 import Register from './Register';
 import './App.css';
@@ -43,6 +45,14 @@ function App() {
             <Route
               path='/Chatbot'
               element={<Chatbot />}
+            />
+            <Route
+              path='/Settings'
+              element={<Settings />}
+            />
+            <Route 
+            path="/profile/:userId" 
+            element={<UserProfile />} 
             />
           </Routes>
         </Router>

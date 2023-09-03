@@ -1,11 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import './Navbar.css';
 
 function AuthNavbar({ isAuthenticated, currentPage, handlePageChange }) {
+  const [user, setUser] = useState(null);
   const accessToken = localStorage.getItem('accessToken');
+  console.log('Access Token:', accessToken);
   const navigate = useNavigate();
   const [showMenu, setShowMenu] = useState(false);
+
+  useEffect(() => {
+    if (accessToken) {
+      axios.get('http://localhost:3000/api/users/me', {
+        headers: { Authorization: `Bearer ${accessToken}` },
+      })
+        .then(response => {
+          setUser(response.data);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  }, [accessToken]);
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
@@ -46,6 +63,9 @@ function AuthNavbar({ isAuthenticated, currentPage, handlePageChange }) {
              <>
                <Link className='MobileLinks' to='/Profile' onClick={closeMenu}>
                  Profile
+               </Link>
+               <Link className='MobileLinks' to='/Settings' onClick={closeMenu}>
+                 Settings
                </Link>
                <div className='logout'>
                <button onClick={logout}>Logout</button>
@@ -99,6 +119,14 @@ function AuthNavbar({ isAuthenticated, currentPage, handlePageChange }) {
 
           {accessToken ? (
             <>
+              {/* <Link
+                className='Links'
+                style={{ color: '#ffffff' }}
+                to={`/profile/${userId}`}
+              >
+                My Profile
+              </Link> */}
+
               <Link
                 className='Links'
                 style={{ color: '#ffffff' }}
@@ -106,8 +134,8 @@ function AuthNavbar({ isAuthenticated, currentPage, handlePageChange }) {
               >
                 Profile
               </Link>
-              
-              <button style={{backgroundColor: "black", fontSize: "1.5vw"}} className='Links' onClick={logout}>Logout</button>
+
+              <button onClick={logout}>Logout</button>
             </>
           ) : (
             <Link className='Links' style={{ color: '#ffffff' }} to='/Login'>

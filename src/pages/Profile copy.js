@@ -3,11 +3,6 @@ import './Profile.css';
 import ProfileComponent from '../components/ProfileComponent';
 
 const Profile = () => {
-    const [profilePic, setProfilePic] = useState("https://pbs.twimg.com/profile_images/1592963714331860996/qhg-IWoI_400x400.jpg");
-
-    const handleProfilePicChange = (event) => {
-      setProfilePic(URL.createObjectURL(event.target.files[0]));
-    };
   return (
     <div style={{maxWidth:"600px", margin:"0px auto"}}>
         <div style={{
@@ -18,9 +13,8 @@ const Profile = () => {
         }}>
             <div>
                 <img className='profilePic' style={{width:"150px", height:"160px", borderRadius:"80px"}} 
-                    src={profilePic}
+                src="https://pbs.twimg.com/profile_images/1592963714331860996/qhg-IWoI_400x400.jpg"
                 />
-                <input type="file" onChange={handleProfilePicChange} />
             </div>
             <div>
                 <h2>Bobby Rabbit</h2>

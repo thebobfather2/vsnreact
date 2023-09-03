@@ -50,5 +50,9 @@
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.1",
     "webpack-cli": "^5.0.2"
+  },
+  "engines": {
+    "node": "^18.16.3"
   }
+  
 }
