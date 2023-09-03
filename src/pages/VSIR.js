@@ -3,14 +3,14 @@ import "./VSIR.css";
 
 function VSIR() {
   return (
-    <div>
+    <div className="MainContainer" style={{minHeight: "100vh"}}>
       <iframe
         title="VSIR"
         src="https://vibestreamnetwork.io/vibestreambeats/vsirfull.html"
         style={{
           width: "100vw",
-          minHeight: "120vh",
           border: "none",
+          minHeight: "100vh",
         }}
       />
     </div>
