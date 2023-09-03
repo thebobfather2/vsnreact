@@ -17,6 +17,7 @@ function App() {
     <div className="App">
         <Router>
           <Header />
+          <div className="content-wrapper">
           <Routes>
             <Route
               path='/'
@@ -55,6 +56,7 @@ function App() {
             element={<UserProfile />} 
             />
           </Routes>
+          </div>
         </Router>
     </div>
   );

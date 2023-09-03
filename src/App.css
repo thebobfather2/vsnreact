@@ -24,6 +24,10 @@
   color: white;
 }
 
+.content-wrapper {
+  margin-top: -120px; /* Adjust the value to match your header's height */
+}
+
 .App-link {
   color: #61dafb;
 }
