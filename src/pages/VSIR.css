@@ -5,7 +5,7 @@
     color: #ffffff;
     text-shadow: 1px 1px #00000050;
     text-align: center;
-    max-width: fit-content;
+    width: 100%;
 }
 
 .mainText {
