@@ -21,7 +21,7 @@ function Header({ handlePageChange, currentPage }) {
 
   useEffect(() => {
     // Define the threshold (e.g., 50 pixels from the top)
-    const threshold = 50;
+    const threshold = 130;
 
     // Check if the mouse is close enough to the top to keep the header visible
     setIsHeaderVisible(mouseY <= threshold);
