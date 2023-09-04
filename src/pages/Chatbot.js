@@ -11,7 +11,7 @@ function Chatbot() {
         console.log("Calling API");
 
         const APIBody = {
-            "model": "gpt-3.5-turbo",
+            "model": "text-davinci-003",
             "prompt": message + "\nAI:",
             "temperature": 0.9,
             "max_tokens": 2048,
@@ -22,7 +22,7 @@ function Chatbot() {
         };
         
         try {
-            const response = await fetch("https://api.openai.com/v1/chat/completions", {
+            const response = await fetch("https://api.openai.com/v1/completions", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -41,7 +41,7 @@ function Chatbot() {
 
     return (
         <div className='Chatbot'>
-            <h1>chatFox</h1>
+            <h1>Chat with the VSN Bot!</h1>
             <div>
                 <input className='chatInput'
                     type="text"
@@ -56,7 +56,7 @@ function Chatbot() {
             </div>
             <div>
                 {response !== "" ?
-                    <h3>chatFox: {response}</h3>
+                    <h3>Bot: {response}</h3>
                     :
                     null
                 }
