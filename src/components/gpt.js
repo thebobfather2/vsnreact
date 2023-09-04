@@ -4,7 +4,7 @@ const openai = require('openai');
 async function generateResponse(prompt) {
   try {
     const completions = await openai.completions.create({
-      engine: 'davinci',
+      engine: 'gpt-3.5-turbo',
       prompt,
       maxTokens: 60,
       n: 1,
