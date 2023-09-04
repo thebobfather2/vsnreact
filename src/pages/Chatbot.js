@@ -41,7 +41,7 @@ function Chatbot() {
 
     return (
         <div className='Chatbot'>
-            <h1>Chat with the VSN Bot!</h1>
+            <h1>chatFox</h1>
             <div>
                 <input className='chatInput'
                     type="text"
@@ -56,7 +56,7 @@ function Chatbot() {
             </div>
             <div>
                 {response !== "" ?
-                    <h3>Bot: {response}</h3>
+                    <h3>chatFox: {response}</h3>
                     :
                     null
                 }
