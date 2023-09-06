@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Home.css";
-import vsnLogo from "../img/vsn.png";
+import vsnLogo from "../img/vsnredbanner.jpg";
 
     
 function Home () {
